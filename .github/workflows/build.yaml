@@ -240,6 +240,8 @@ jobs:
     name: Test OS image
     needs: [ build, prepare ]
     uses: ./.github/workflows/test.yaml
+    with:
+      version: ${{ needs.prepare.outputs.version_full }}
 
   update_index:
     name: Update artifacts index
